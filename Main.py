@@ -1,7 +1,9 @@
 import random
 speed(0)
 penup()
-setposition(random.randint(-150, 150), random.randint(-150, 150))
+target_x = random.randint(-150, 150)
+target_y = random.randint(-150, 150)
+setposition(target_x, target_y)
 pendown()
 
 def next_circle():
@@ -15,7 +17,7 @@ radius=25
 def player_guess(player):
     print(player)
     xvar = int(input("try to hit the center! on X "))
-    yvar= int(input("try to hit the center! on Y  "))
+    yvar = int(input("try to hit the center! on Y "))
     return xvar, yvar
 
 def place_dart(x, y, p_color):
@@ -45,5 +47,15 @@ place_dart(p1_x, p1_y, dart_color_one)
 
 place_dart(p2_x, p2_y, dart_color_two)
 
-penup()
-setposition(-210, -210)
+score1 = (50 - abs(abs(target_x) - abs(p1_x))) + (50 - abs((abs(target_y) + 25) - abs(p1_y)))
+if score1 < 0:
+    score1 = 0
+
+score2 = (50 - abs(abs(target_x) - abs(p2_x))) + (50 - abs((abs(target_y) + 25) - abs(p2_y)))
+if score2 < 0:
+    score2 = 0
+
+print("Player one score: " + str(score1))
+print("Player two score: " + str(score2))
+
+setposition(990, 909)
