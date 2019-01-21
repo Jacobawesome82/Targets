@@ -97,3 +97,21 @@ print("Player one score: " + str(score1))
 print("Player two score: " + str(score2))
 
 setposition(-220, -220)
+def player_one_wins():
+    print player_one_name + " wins!"
+    setposition(-250, -250)
+    dart_color_one
+    begin_fill()
+    circle(9999)
+    end_fill()
+def player_two_wins():
+    print player_two_name + " wins!"    
+    setposition(-250, -250)
+    dart_color_two
+    begin_fill()
+    circle(9999)
+    end_fill()
+if score1 > score2:
+    player_one_wins()
+if score1 < score2:
+    player_two_wins()
