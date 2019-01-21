@@ -48,8 +48,6 @@ def make_circle_one(radius):
     begin_fill()
     circle(radius)
     end_fill()
-penup()
-setposition(0, -150)
 pendown()
 for i in range(2):
     make_circle(radius)
@@ -97,26 +95,18 @@ print("Player one score: " + str(score1))
 print("Player two score: " + str(score2))
 
 setposition(-220, -220)
-def player_one_wins():
-    print player_one_name + " wins!"
+
+def display_winner(winner):
+    if winner == "tie":
+        print "It's a tie!"
+    else:
+        print winner + " wins!"
     setposition(-250, -250)
-    dart_color_one
-    begin_fill()
-    circle(9999)
-    end_fill()
-    
-def player_two_wins():
-    print player_two_name + " wins!"    
-    setposition(-250, -250)
-    dart_color_two
-    begin_fill()
-    circle(9999)
-    end_fill()
-    
+
+#Calculate who wins
 if score1 > score2:
-    player_one_wins()
+    display_winner(player_one_name)
 if score1 < score2:
-    player_two_wins()
+    display_winner(player_two_name)
 if score1 == score2:
-    print "It's a tie!"
-    
+    display_winner("tie")
