@@ -112,7 +112,11 @@ def player_two_wins():
     begin_fill()
     circle(9999)
     end_fill()
+    
 if score1 > score2:
     player_one_wins()
-if score1 < score2:
+elif score1 < score2:
     player_two_wins()
+else:
+    print "It's a tie!"
+    
