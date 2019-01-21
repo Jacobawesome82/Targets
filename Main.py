@@ -115,8 +115,8 @@ def player_two_wins():
     
 if score1 > score2:
     player_one_wins()
-elif score1 < score2:
+if score1 < score2:
     player_two_wins()
-else:
+if score1 == score2:
     print "It's a tie!"
     
