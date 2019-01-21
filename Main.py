@@ -23,11 +23,11 @@ dart_color_two = input("what color of darts do you want " + player_two_name +"? 
 if dart_color_one == ("black") or dart_color_two == ("black"):
     color_choice_one = ("white")
     if dart_color_one == ("white") or dart_color_two == ("white"):
-        color_choice_one = ("purple")
+        color_choice_one = ("orange")
 if dart_color_one == ("red") or dart_color_two == ("red"):
     color_choice_two = ("blue")
     if dart_color_one == ("blue") or dart_color_two == ("blue"):
-        color_choice_two = ("green")
+        color_choice_two = ("yellow")
 pendown()
 
 def next_a_circle(radius):
@@ -104,6 +104,7 @@ def player_one_wins():
     begin_fill()
     circle(9999)
     end_fill()
+    
 def player_two_wins():
     print player_two_name + " wins!"    
     setposition(-250, -250)
